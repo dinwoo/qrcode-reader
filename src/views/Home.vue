@@ -1,18 +1,33 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <qrcodeScanner v-bind:qrbox="250" v-bind:fps="10" style="width: 500px;">
+    </qrcodeScanner>
   </div>
 </template>
 
+<script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import qrcodeScanner from "../components/QrcodeScanner.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
-  }
-}
+    qrcodeScanner,
+  },
+  data() {
+    return {
+      header: "Html5-qrcode using vue.js",
+      result: "",
+    };
+  },
+  created: function() {
+    this.$root.$on(
+      "decodedQrCode",
+      function(qrCodeMessage) {
+        this.decodedMessage = qrCodeMessage;
+      }.bind(this)
+    );
+  },
+};
 </script>
