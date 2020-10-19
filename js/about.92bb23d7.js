@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["about"],{f820:function(e,o,n){"use strict";n.r(o);var t=function(){var e=this,o=e.$createElement,n=e._self._c||o;return n("div",{staticClass:"about"},[n("h1",[e._v("This is an QRCode Reader")]),n("qrcode-stream",{on:{decode:e.onDecode}})],1)},a=[],s={name:"about",methods:{onDecode:function(e){console.log(e)}}},c=s,u=n("2877"),d=Object(u["a"])(c,t,a,!1,null,null,null);o["default"]=d.exports}}]);
+//# sourceMappingURL=about.92bb23d7.js.map
